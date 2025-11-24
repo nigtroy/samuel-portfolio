@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio — Samuel Nignamon Gyimah</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+  </head>
+
+  <body>
+    <header class="site" role="banner">
+      <div>
+      </div>
+      <nav class="main" role="navigation">
+        <a href="#about">About me</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact" class="cta">Contact me</a>
+      </nav>
+      <button class="menu-btn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay"></div>
+    <div class="drawer">
+      <div class="drawer-header">
+        <button class="close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="#about">About me</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact" class="cta">Contact me</a>
+      </nav>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero" aria-label="hero">
+      <!-- Desktop Layout -->
+      <div class="panel-left">
+        <div class="intro-small">Hi, I am</div>
+        <h1 class="name">Samuel N. Gyimah</h1>
+        <p class="tag">Data Scientist / AI Engineer</p>
+
+        <div class="social-links">
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="panel-right">
+        <!-- Desktop Profile Image -->
+        <div class="profile-wrap">
+          <img class="profile" src="public/images/hero.png" alt="Portrait of Tomasz Gajda">
+          <div class="profile-info">
+            <h3>I'm a Data Scientist</h3>
+            <p>with a passion for<br>Computer Vision</p>
+          </div>
+        </div>
+
+        <!-- Mobile Background Image Container -->
+        <div class="mobile-hero-media">
+          <img class="profile-mobile" src="public/images/hero.png" alt="Portrait of Tomasz Gajda">
+        </div>
+
+        <!-- Mobile Overlay Content -->
+        <div class="mobile-overlay" aria-hidden="false">
+          <div class="overlay-content">
+            <div class="intro-small">Hi, I am</div>
+            <h1 class="name">Samuel N. Gyimah</h1>
+            <p class="tag">Data Scientist / AI Engineer</p>
+          </div>
+          <div class="mobile-socials">
+            <a href="#" aria-label="Email">
+              <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2 6.75A2.75 2.75 0 014.75 4h14.5A2.75 2.75 0 0122 6.75v10.5A2.75 2.75 0 0119.25 20H4.75A2.75 2.75 0 012 17.25V6.75z"
+                  fill="none" stroke="#fff" stroke-width="1.6" />
+              </svg>
+            </a>
+            <a href="#" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 .5C5.7.5.9 5.3.9 11.6c0 4.7 3 8.7 7.2 10.1.5.1.7-.2.7-.5v-1.8c-2.9.6-3.6-1.4-3.6-1.4-.4-1-1-1.3-1-1.3-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.6.3-1 .6-1.3-2.3-.3-4.6-1.2-4.6-5.4 0-1.2.4-2.2 1-3-.1-.3-.4-1.2.1-2.5 0 0 .9-.3 3 .9.9-.2 1.9-.3 2.9-.3s2 .1 2.9.3c2.1-1.2 3-.9 3-.9.5 1.3.2 2.2.1 2.5.6.8 1 1.8 1 3 0 4.2-2.3 5.1-4.6 5.4.4.3.8.9.8 1.9v2.8c0 .3.2.6.7.5 4.2-1.4 7.2-5.4 7.2-10.1C23 5.3 18.3.5 12 .5z"
+                  fill="none" stroke="#fff" stroke-width="1.6" />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 10h3v7H7zM8.5 7.5a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM13 10c1.6 0 3 1.2 3 3.6V17h-3v-3.2c0-.9-.3-1.4-1-1.4s-1.1.6-1.1 1.4V17h-3V10h3v1.2c.5-.8 1.5-1.2 2.6-1.2z"
+                  fill="none" stroke="#fff" stroke-width="1.6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: IT WORRIES -->
+    <section id="it-berries" class="it-berries-section">
+      <div class="it-berries-bg-logo">
+        <!--merged image-->
+        <div class="logo-itb-container">
+          <img src="public/images/1_41.svg" alt="ITB logo shape" class="logo-itb-shape1">
+          <img src="public/images/1_39.svg" alt="ITB logo shape" class="logo-itb-shape2">
+          <img src="public/images/1_40.svg" alt="ITB logo shape" class="logo-itb-shape3">
+          <span class="logo-itb-text">IT</span>
+        </div>
+      </div>
+      <div class="container">
+        <div class="it-berries-content">
+          <h2>IT BERRIES</h2>
+          <p>Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. Sed ornare sit amet lorem
+            sed viverra. In vel urna quis libero viverra facilisis ut ac est. Morbi commodo, eros in dignissim tempus,
+            lacus odio rutrum augue, in semper sem magna quis tellus. Etiam enim erat, suscipit eu semper a, dictum sit
+            amet elit. Nunc egestas nisi eget enim gravida facilisis. Pellentesque laoreet varius turpis vel pharetra.
+            Ut ante justo, consequat vitae elementum tempor, accumsan nec eros.</p>
+          <a href="#" class="btn btn-light">READ MORE</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>ABOUT ME</h2>
+          <div class="border-box"></div>
+        </div>
+        <p class="about-paragraph">Data Scientist at Elder Research, focused on turning complex data into practical impact. I’ve built computer-vision systems, real-time model monitoring tools, and LLM solutions that reduce weeks of effort to minutes. My goal is to help push the boundaries of autonomous vehicle perception.</p>
+        <div class="explore-btn-container">
+          <a href="#" class="btn">EXPLORE</a>
+        </div>
+        <img src="public/images/07c0d9fd8d83d78972a938739280579decfc2333.png" alt="separator" class="separator">
+        <div class="services-grid">
+          <article class="service-item">
+            <img src="public/images/data-structure_17384003.png" alt="Design Icon"
+              class="service-icon">
+            <h3>BIG DATA</h3>
+            <p>Processing and analyzing large-scale datasets to extract meaningful insights and support data-driven decision-making. Experienced with end-to-end workflows, from data ingestion and cleaning to modeling and real-time monitoring.</p>
+          </article>
+          <article class="service-item">
+            <img src="public/images/machine-learning_12965064.png" alt="Development Icon"
+              class="service-icon">
+            <h3>MACHINE LEARNING</h3>
+            <p>Building robust ML systems using classical algorithms and modern deep learning algorithms. Focused on developing deployable, high-impact models, including computer vision and LLM-powered solutions.</p>
+          </article> 
+          <article class="service-item">
+            <img src="public/images/innovation_8444906.png" alt="Maintenance Icon"
+              class="service-icon">
+            <h3>INNOVATION</h3>
+            <p>Continuously exploring emerging AI technologies to design solutions that reduce human effort and scale efficiently. Driven by a long-term vision to advance autonomous vehicle perception and push the boundaries of intelligent systems.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <h2>SKILLS</h2>
+          <div class="border-box"></div>
+        </div>
+
+        <div class="skills-category">
+          <h3>USING NOW:</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img src="public/images/1_740.svg" alt="HTML5 Icon">
+              <p>HTML5</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/1_753.svg" alt="CSS3 Icon">
+              <p>CSS3</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/1_755.svg" alt="SASS Icon">
+              <p>SASS</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/1_757.svg" alt="JavaScript Icon">
+              <p>JAVASCRIPT</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/1_790.svg" alt="React Icon">
+              <p>REACT</p>
+            </div>
+            <div class="skill-item">
+              <!--merged image-->
+              <div class="icon-merged-container">
+                <img src="public/images/1_762.svg" alt="Bootstrap background" style="width: 96px; height: 100px;">
+                <img src="public/images/1_763.svg" alt="Bootstrap B"
+                  style="width: 46px; height: 58px; top: 21px; left: 26px;">
+              </div>
+              <p>BOOTSTRAP</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/ff00c08760983e0e037aaf6ab4e004f4d147276a.png" alt="Git Icon">
+              <p>GIT</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/1_768.svg" alt="Figma Icon">
+              <p>FIGMA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>LANGUAGES:</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img src="public/images/icons8-python-96.png" alt="English Language Icon">
+              <p>PYTHON</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/icons8-matlab-96.png" alt="Spanish Language Icon">
+              <p>MATLAB</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/348780418fb3df8c102fbeb4a112cda82b96502b.png" alt="C++ Icon">
+              <p>C++</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/icons8-sql-96.png" alt="C Icon">
+              <p>SQL</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>AREAS OF EXPERTISE:</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img src="public/images/icons8-data-science-100.png" alt="Node.js Icon">
+              <p>DATA SCIENCE</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/icons8-vision-96.png" alt="MySQL Icon">
+              <p>COMPUTER VISION</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/icons8-artificial-intelligence-brain-96.png" alt="MongoDB Icon">
+              <p>DEEP LEARNING</p>
+            </div>
+            <div class="skill-item">
+              <img src="public/images/icons8-delivery-robot-96.png" alt="TypeScript Icon">
+              <p>SELF DRIVING CARS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION 4: PORTFOLIO -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="portfolio-header">
+        <div class="container">
+          <div class="section-header">
+            <h2 style="color: white;">PORTFOLIO</h2>
+            <div class="border-box" style="border-color: white;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <nav class="portfolio-filter">
+          <a href="#" class="active">ALL</a>
+          <a href="#">CODED</a>
+          <a href="#">DESIGNED</a>
+        </nav>
+        <div class="portfolio-grid">
+          <a href="#" class="project-item"><img src="public/images/b94d335a046e5369005ac18361ab9b5210acd780.png"
+              alt="Project 1"></a>
+          <a href="#" class="project-item project-item-main">
+            <img src="public/images/6d993f37bde04f4d87234d7b9ba6e69fd20c3765.png" alt="Main Project Background">
+            <div class="project-overlay">
+              <p class="project-type">coded, designed</p>
+              <h4>eatsome.</h4>
+              <p class="project-desc">Restaurant browsing in React.js (Using Yelp API)</p>
+              <div class="project-links">
+                <span class="btn btn-light btn-small">DEMO</span>
+                <span class="btn btn-light btn-small">MORE</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="project-item"><img src="public/images/2607de40f99a1e1e1db55c7901116b1422152deb.png"
+              alt="Project 3"></a>
+          <a href="#" class="project-item"><img src="public/images/6d993f37bde04f4d87234d7b9ba6e69fd20c3765.png"
+              alt="Project 4" style="transform: rotate(180deg);"></a>
+          <a href="#" class="project-item"><img src="public/images/2607de40f99a1e1e1db55c7901116b1422152deb.png"
+              alt="Project 5" style="transform: rotate(180deg);"></a>
+          <a href="#" class="project-item"><img src="public/images/b94d335a046e5369005ac18361ab9b5210acd780.png"
+              alt="Project 6" style="transform: rotate(180deg);"></a>
+        </div>
+        <p class="portfolio-footer-text">And many more to come!</p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>CONTACT</h2>
+          <div class="border-box"></div>
+        </div>
+        <p class="contact-paragraph">Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus.
+          Sed ornare sit amet lorem sed viverra. In vel urna quis libero viverra facilisis ut ac est.</p>
+        <img src="public/images/07c0d9fd8d83d78972a938739280579decfc2333.png" alt="separator" class="separator">
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="ENTER YOUR NAME*" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="ENTER YOUR EMAIL*" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" name="phone" placeholder="PHONE NUMBER">
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="YOUR MESSAGE*" required></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-submit">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site">
+      <div class="footer-content">
+        <a href="#hero">
+          <h3 class="footer-title">BACK TO TOP</h3>
+        </a>
+
+        <div class="footer-socials">
+          <a href="#"><img src="public/images/1_867.svg" alt="Facebook"></a>
+          <a href="#"><img src="public/images/1_868.svg" alt="LinkedIn"></a>
+          <a href="#"><img src="public/images/1_869.svg" alt="Instagram"></a>
+          <a href="#"><img src="public/images/1_874.svg" alt="Mail"></a>
+        </div>
+
+        <p class="footer-text">© 2025 Tomasz Gajda. Made with passion.</p>
+      </div>
+    </footer>
+  </body>
+
+</html>
