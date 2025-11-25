@@ -60,6 +60,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+
+
 // Form submission
 const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit', function (e) {
