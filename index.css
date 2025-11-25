@@ -1049,11 +1049,18 @@ a {
 .skill-item {
   text-align: center;
   max-width: 180px;
+  display: flex; /* Add this */
+  flex-direction: column; /* Add this */
+  align-items: center; /* Add this */
 }
 .skill-item img, .skill-item .icon-merged-container {
+  width: 100px; /* Fixed width */
   height: 100px;
   margin-bottom: 25px;
   object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .skill-item p {
   font-family: 'Montserrat', sans-serif;
@@ -1061,17 +1068,19 @@ a {
   letter-spacing: 3.25px;
   margin: 0;
   font-weight: 400;
+  text-align: center; /* Ensure text is centered */
 }
 .icon-merged-container {
   position: relative;
-  width: 127px;
+  width: 100px; /* Match other images */
   height: 100px;
   margin: 0 auto 25px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .icon-merged-container img {
   position: absolute;
-  top: 0;
-  left: 0;
   margin: 0;
 }
 @media (max-width: 768px) {
