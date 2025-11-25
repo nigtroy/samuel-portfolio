@@ -1249,7 +1249,7 @@ a {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
+  gap: 35px;
   margin-bottom: 40px;
 }
 
@@ -1325,11 +1325,16 @@ a {
 }
 
 .project-title {
-  font-size: 24px;
+  font-size: 22px; /* Slightly smaller */
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 16px;
+  min-height: 56px; /* Fixed height for 2 lines */
+  line-height: 1.3;
+  display: flex;
+  align-items: flex-start; /* Align to top */
 }
+
 
 .project-description {
   font-size: 16px;
