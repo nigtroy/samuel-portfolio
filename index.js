@@ -113,19 +113,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Form submission
 const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const submitBtn = this.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'SENDING...';
 
-    setTimeout(() => {
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-        submitBtn.textContent = originalText;
-    }, 1000);
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+       
+        const submitBtn = this.querySelector('.btn-submit'); 
+        
+        if (!submitBtn) return; // Safety check in case class changes again
 
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'SENDING...';
+        submitBtn.style.opacity = '0.7'; // Visual feedback
+        submitBtn.disabled = true;
+
+        // 2. Prepare the data
+        const formData = new FormData(this);
+
+        // 3. Send to Formspree (Replace the URL below with YOUR unique Formspree URL)
+        fetch("https://formspree.io/f/movglapv", {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                // Success!
+                alert('Thank you! Your message has been sent successfully.');
+                this.reset(); // Clear the form
+            } else {
+                // Error from Formspree
+                alert('Oops! There was a problem sending your message. Please try again.');
+            }
+        })
+        .catch(error => {
+            // Network error
+            alert('Oops! There was a problem sending your message. Please check your internet connection.');
+        })
+        .finally(() => {
+            // 4. Reset button regardless of success/failure
+            submitBtn.textContent = originalText;
+            submitBtn.style.opacity = '1';
+            submitBtn.disabled = false;
+        });
+    });
+}
 // Scroll to top functionality
 document.querySelector('.footer-title').parentElement.style.cursor = 'pointer';
 document.querySelector('.footer-title').addEventListener('click', function () {
