@@ -134,3 +134,52 @@ document.querySelector('.footer-title').addEventListener('click', function () {
         behavior: 'smooth'
     });
 });
+
+
+// ... existing code ...
+
+// --- THEME TOGGLE FUNCTIONALITY ---
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    
+    // 1. Check LocalStorage. If nothing, default to 'blue' (which is the default in CSS :root)
+    const savedTheme = localStorage.getItem('theme');
+    
+    // If saved theme is 'light', apply it. Otherwise do nothing (default is blue)
+    if (savedTheme === 'light') {
+        document.body.setAttribute('data-theme', 'light');
+        updateIcons('light');
+    } else {
+        updateIcons('blue'); // Default
+    }
+
+    // 2. Click Handler
+    toggleBtn.addEventListener('click', () => {
+        const currentTheme = document.body.getAttribute('data-theme');
+        
+        if (currentTheme === 'light') {
+            // Switch to Blue (Default)
+            document.body.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'blue');
+            updateIcons('blue');
+        } else {
+            // Switch to Light
+            document.body.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            updateIcons('light');
+        }
+    });
+
+    function updateIcons(theme) {
+        if (theme === 'light') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+            moonIcon.style.stroke = '#111'; // Make moon black in light mode
+        } else {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+    }
+});
