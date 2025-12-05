@@ -482,44 +482,68 @@ footer.site{
     object-position:center;
   }
   
-  /* Mobile Overlay */
-  .mobile-overlay{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    height:38%;
-    background:linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75));
-    clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
-    color:#fff;
-    padding:22px 18px;
-    display:flex;
-    align-items:flex-end;
-    z-index:30;
-  }
+  /* Mobile Overlay Container */
+.mobile-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 45%; /* Increased height slightly for smoother fade */
   
-  .mobile-overlay .overlay-content{
-    max-width:72%;
-  }
+  /* Stronger gradient: Solid black at bottom (0%), fading to transparent */
+  background: linear-gradient(to top, rgba(0,0,0,1) 10%, rgba(0,0,0,0.7) 50%, transparent 100%);
   
-  .mobile-overlay .intro-small{
-    font-size:14px;
-    margin:0 0 6px;
-    color:rgba(255,255,255,0.85);
-  }
+  color: #fff;
+  padding: 22px 18px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.mobile-overlay .overlay-content {
+  width: 100%;
+  pointer-events: auto;
+  margin-bottom: 10px; /* Lifts text slightly off the very bottom edge */
+}
+
+/* "Hi, I am" */
+.mobile-overlay .intro-small {
+  font-size: 14px;
+  margin: 0 0 4px;
+  color: #3b82f6; /* Use your Blue Accent color here for pop */
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* "Samuel N. Gyimah" */
+.mobile-overlay .name {
+  font-size: 32px; /* Slightly bigger */
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.1;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Styling for the Grey Text inside the White Pill */
+.mobile-overlay .tag {
+  /* 1. Control the Box Dimensions */
+  display: inline-block;       
+  background-color: #ffffff;  
+  padding: 6px 16px;           
+  border-radius: 50px;        
+  margin-top: 8px;             
   
-  .mobile-overlay .name{
-    font-size:28px;
-    margin:0 0 4px;
-    line-height:1.2;
-  }
+  color: #555555;             
+  font-size: 13px;             
+  font-weight: 600;            
+  text-shadow: none;           
   
-  .mobile-overlay .tag{
-    font-size:13px;
-    color:rgba(255,255,255,0.8);
-    margin:0;
-  }
-  
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+      
   /* Mobile Social Icons */
   .mobile-socials{
     position:absolute;
