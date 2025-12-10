@@ -253,9 +253,16 @@ section { padding: 100px 0; position: relative; }
 .service-item:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: var(--accent-shadow); }
 
 /* ICON FILTER MAGIC */
+/* Styling for Icons */
 .service-icon, .skill-item img, .skill-item .icon-merged-container {
-  filter: var(--icon-filter);
-  height: 60px; margin-bottom: 20px; transition: filter 0.3s;
+  /* OLD: filter: var(--icon-filter);  <-- This was forcing them white */
+  
+  /* NEW: No filter, so the original colors (Blue Python, Orange AWS) show */
+  filter: none; 
+  
+  height: 60px; 
+  margin-bottom: 20px; 
+  transition: transform 0.3s;
 }
 
 .service-item h3 { color: var(--accent); font-size: 18px; margin-bottom: 15px; letter-spacing: 1px; }
@@ -305,8 +312,24 @@ section { padding: 100px 0; position: relative; }
 .project-content { padding: 30px; }
 .project-title { color: var(--ink); margin-bottom: 15px; font-size: 22px; }
 .project-description { color: var(--muted); font-size: 15px; }
-.project-tags .tag { background: rgba(59, 130, 246, 0.1); color: #93c5fd; border: none; }
-[data-theme="light"] .project-tags .tag { background: #f0f0f0; color: #555; }
+/* Updated Project Tags to match Experience Tags */
+.project-tags .tag {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 12px;
+  display: inline-block; /* Keeps them neat */
+  margin-right: 5px; /* Adds spacing between tags */
+}
+
+/* Ensures they look good in Light Mode too */
+[data-theme="light"] .project-tags .tag {
+  background: #f3e8f9; 
+  color: var(--accent); 
+  border: 1px solid #e0c8ed;
+}
 .btn-secondary { color: var(--ink); border: 1px solid var(--border); padding: 8px 16px; border-radius: 6px; font-size: 13px; }
 .btn-secondary:hover { background: var(--paper-hover); color: var(--accent); border-color: var(--accent); }
 
@@ -388,14 +411,20 @@ footer.site { background: var(--bg); border-top: 1px solid var(--border); paddin
     display: block !important;
     order: 1;
     margin: 0 auto 30px;
-    width: 200px;
-    height: 200px;
+    
+    /* UPDATED: Increased from 200px to 280px */
+    width: 280px;
+    height: 280px;
   }
   
   .profile-mobile {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
+    /* NEW: Ensures the top of the head aligns with the top of the circle */
+    object-position: top center; 
+    
     border-radius: 50%;
     border: 4px solid var(--paper);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
@@ -446,6 +475,15 @@ footer.site {
   transition: color 0.3s;
 }
 
+.social-links { 
+  display: flex; 
+  gap: 16px; 
+  margin-top: 24px;
+  
+  /* ADD THIS LINE to center the icons horizontally */
+  justify-content: center; 
+}
+
 .footer-title:hover {
   color: var(--accent);
 }
@@ -461,8 +499,9 @@ footer.site {
   height: 24px;
   width: 24px;
   
-  /* USE THE VARIABLE HERE */
-  /* This automatically switches between "Force White" (Dark Mode) and "None" (Light Mode) */
+  /* This uses the variable defined in :root */
+  /* Dark Mode = brightness(0) invert(1) (White) */
+  /* Light Mode = none (Original/Black) */
   filter: var(--icon-filter); 
   
   transition: opacity 0.3s, transform 0.3s;

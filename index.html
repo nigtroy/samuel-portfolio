@@ -54,8 +54,26 @@
     <div class="drawer-overlay"></div>
     <div class="drawer">
       <div class="drawer-header">
+        <button class="theme-toggle-btn mobile-toggle" aria-label="Switch Theme" style="background:none; border:none; cursor:pointer; padding: 5px; margin-right: 20px; display:flex; align-items:center;">
+          <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none; stroke: var(--ink);">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block; stroke: var(--muted);">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
         <button class="close-btn" aria-label="Close menu">&times;</button>
       </div>
+      
       <nav class="drawer-nav">
         <a href="#about">About me</a>
         <a href="#skills">Skills</a>
@@ -100,19 +118,18 @@
             <p>Specialized in<br>Autonomous Perception</p>
           </div>
         </div>
+      </div> <div class="mobile-hero-media">
+        <img class="profile-mobile" src="public/images/hero.png" alt="Samuel Gyimah Portrait">
+      </div>
 
-        <div class="mobile-hero-media">
-          <img class="profile-mobile" src="public/images/hero.png" alt="Samuel Gyimah Portrait">
-        </div>
-
-        <div class="mobile-overlay" aria-hidden="false">
-          <div class="overlay-content">
-            <div class="intro-small">Hi, I am</div>
-            <h1 class="name">Samuel N. Gyimah</h1>
-            <p class="tag">ML Engineer | Computer Vision</p>
-          </div>
+      <div class="mobile-overlay" aria-hidden="false">
+        <div class="overlay-content">
+          <div class="intro-small">Hi, I am</div>
+          <h1 class="name">Samuel N. Gyimah</h1>
+          <p class="tag">ML Engineer | Computer Vision Specialist</p>
         </div>
       </div>
+      
     </section>
 
     <!-- ABOUT ME SECTION -->

@@ -138,48 +138,57 @@ document.querySelector('.footer-title').addEventListener('click', function () {
 
 // ... existing code ...
 
-// --- THEME TOGGLE FUNCTIONALITY ---
+// --- IMPROVED THEME TOGGLE FUNCTIONALITY (Desktop & Mobile) ---
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('theme-toggle');
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
+    // Select ALL theme buttons (desktop + mobile)
+    const toggleBtns = document.querySelectorAll('.theme-toggle-btn, #theme-toggle');
     
-    // 1. Check LocalStorage. If nothing, default to 'blue' (which is the default in CSS :root)
+    // 1. Check LocalStorage. If nothing, default to 'blue'
     const savedTheme = localStorage.getItem('theme');
     
-    // If saved theme is 'light', apply it. Otherwise do nothing (default is blue)
     if (savedTheme === 'light') {
         document.body.setAttribute('data-theme', 'light');
-        updateIcons('light');
+        updateAllIcons('light');
     } else {
-        updateIcons('blue'); // Default
+        updateAllIcons('blue'); // Default
     }
 
-    // 2. Click Handler
-    toggleBtn.addEventListener('click', () => {
-        const currentTheme = document.body.getAttribute('data-theme');
-        
-        if (currentTheme === 'light') {
-            // Switch to Blue (Default)
-            document.body.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'blue');
-            updateIcons('blue');
-        } else {
-            // Switch to Light
-            document.body.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            updateIcons('light');
-        }
+    // 2. Attach Click Handlers to ALL buttons
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme');
+            
+            if (currentTheme === 'light') {
+                // Switch to Blue
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'blue');
+                updateAllIcons('blue');
+            } else {
+                // Switch to Light
+                document.body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                updateAllIcons('light');
+            }
+        });
     });
 
-    function updateIcons(theme) {
-        if (theme === 'light') {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-            moonIcon.style.stroke = '#111'; // Make moon black in light mode
-        } else {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        }
+    // Helper to update icons in ALL buttons at once
+    function updateAllIcons(theme) {
+        toggleBtns.forEach(btn => {
+            const sunIcon = btn.querySelector('.sun-icon');
+            const moonIcon = btn.querySelector('.moon-icon');
+            
+            if (theme === 'light') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                // Force moon color for visibility on light paper
+                moonIcon.style.stroke = '#111'; 
+            } else {
+                sunIcon.style.display = 'block';
+                // Force sun color for visibility on dark paper
+                sunIcon.style.stroke = '#fff'; 
+                moonIcon.style.display = 'none';
+            }
+        });
     }
 });
